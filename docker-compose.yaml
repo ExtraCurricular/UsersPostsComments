@@ -12,7 +12,7 @@ services:
     command: mvn clean spring-boot:run
     depends_on:
       - mysql
-     links:
+    links:
       - mysql
 
   mysql:
