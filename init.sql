@@ -1,5 +1,3 @@
-set @@sql_mode = '';
-
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (
 id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
