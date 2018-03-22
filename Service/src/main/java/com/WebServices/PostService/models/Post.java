@@ -17,13 +17,10 @@ public class Post {
     @GenericGenerator(name = "increment", strategy = "increment")
     @Column(name = "id")
     private long id;
-    @NotNull
     @Column(name = "title")
     private String title;
-    @NotNull
     @Column(name = "body")
     private String body;
-    @NotNull
     @Column(name = "userId")
     private int userId;
 

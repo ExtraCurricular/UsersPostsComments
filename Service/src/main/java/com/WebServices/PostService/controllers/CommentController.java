@@ -35,9 +35,6 @@ public class CommentController {
 
     @PostMapping("/comments")
     public Comment createComment(@Valid @RequestBody Comment comment, HttpServletResponse response) {
-        postRepository.findById(comment.getPostId()).orElseThrow(() -> new Exception404("No Post api/posts/id", comment.getPostId()));
-        userRepository.findById(comment.getUserId()).orElseThrow(() -> new Exception404("No User api/users/id", comment.getUserId()));
-
         response.addHeader("Location", "api/comments");
         response.setStatus(201);
         return commentRepository.save(comment);
@@ -45,9 +42,6 @@ public class CommentController {
 
     @PutMapping("/comments/{id}")
     public Comment updateComment(@PathVariable(value = "id") Long commentId, @Valid @RequestBody Comment newComment) {
-        postRepository.findById(newComment.getPostId()).orElseThrow(() -> new Exception404("No Post api/posts/id", newComment.getPostId()));
-        userRepository.findById(newComment.getUserId()).orElseThrow(() -> new Exception404("No User api/users/id", newComment.getUserId()));
-
         Comment comment = commentRepository.findById(commentId).orElseThrow(() -> new Exception404("(PUT) api/comments", commentId));
 
         comment.setBody(newComment.getBody());

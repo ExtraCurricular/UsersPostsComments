@@ -27,13 +27,12 @@ public class PostController {
     }
 
     @GetMapping("/posts/{id}")
-    public Post getPostById(@PathVariable(value = "id") Long postId) {
+    public  getPostById(@PathVariable(value = "id") Long postId) {
         return postRepository.findById(postId).orElseThrow(() -> new Exception404("(GET) api/posts/id", postId));
     }
 
     @PostMapping("/posts")
     public Post createPost(@Valid @RequestBody Post post, HttpServletResponse response) {
-        userRepository.findById((long)post.getUserId()).orElseThrow(() -> new Exception404("No User api/users/id", post.getUserId()));
         response.addHeader("Location", "api/posts");
         response.setStatus(201);
         return postRepository.save(post);
@@ -41,7 +40,6 @@ public class PostController {
 
     @PutMapping("/posts/{id}")
     public Post updatePost(@PathVariable(value = "id") Long postId, @Valid @RequestBody Post newPost) {
-        userRepository.findById((long)newPost.getUserId()).orElseThrow(() -> new Exception404("No User api/users/id", newPost.getUserId()));
         Post post = postRepository.findById(postId).orElseThrow(() -> new Exception404("(PUT) api/posts", postId));
         post.setTitle(newPost.getTitle());
         post.setBody(newPost.getBody());

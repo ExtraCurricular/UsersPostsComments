@@ -15,13 +15,10 @@ public class Comment {
     @GeneratedValue(generator = "increment")
     @Column(name = "id")
     private long id;
-    @NotNull
     @Column(name = "body")
     private String body;
-    @NotNull
     @Column(name = "userId")
     private long userId;
-    @NotNull
     @Column(name = "postId")
     private long postId;
 
