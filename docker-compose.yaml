@@ -1,11 +1,11 @@
 version: '2'
 services:
   app:
-    build: ./service
-    image: tautvis/service
-    working_dir: /service
+    build: ./Service
+    image: tautvis/Service
+    working_dir: /Service
     volumes:
-      - ./service:/service
+      - ./Service:/Service
       - ~/.m2:/root/.m2
     expose:
       - "8080"
