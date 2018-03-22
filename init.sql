@@ -1,4 +1,4 @@
-set @@sql_mode = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
+set @@sql_mode = '';
 
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (
