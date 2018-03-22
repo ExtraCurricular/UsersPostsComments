@@ -33,7 +33,7 @@ public class PostController {
 
     @PostMapping("/posts")
     public Post createPost(@Valid @RequestBody Post post, HttpServletResponse response) {
-        //userRepository.findById((long)post.getUserId()).orElseThrow(() -> new Exception404("No User api/users/id", post.getUserId()));
+        userRepository.findById((long)post.getUserId()).orElseThrow(() -> new Exception404("No User api/users/id", post.getUserId()));
         response.addHeader("Location", "api/posts");
         response.setStatus(201);
         return postRepository.save(post);
