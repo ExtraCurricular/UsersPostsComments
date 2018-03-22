@@ -28,7 +28,7 @@ public class UserController {
     public User getUserById(@PathVariable(value = "id") Long userId) {
         return userRepository.findById(userId).orElseThrow(() -> new Exception404("(GET) api/users/id", userId));
     }
-
+    
     @PostMapping("/users")
     public User createUser(@Valid @RequestBody User user, HttpServletResponse response) {
         response.addHeader("Location", "api/users");
