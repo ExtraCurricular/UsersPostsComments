@@ -1,0 +1,26 @@
+version: '2'
+services:
+  app:
+    build: ./service
+    image: tautvis/service
+    working_dir: /service
+    volumes:
+      - ./service:/service
+      - ~/.m2:/root/.m2
+    expose:
+      - "8080"
+    command: mvn clean spring-boot:run
+    depends_on:
+      - mysql
+     links:
+      - mysql
+
+  mysql:
+    image: mysql:5.7
+    ports:
+        - "3306:3306"
+    environment:
+      MYSQL_DATABASE: WebServicesPostService
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_HOST: '%'
+    container_name: mysql-standalone
