@@ -8,7 +8,7 @@ services:
       - ./Service:/Service
       - ~/.m2:/root/.m2
     ports:
-      - "8080:8080"
+      - "80:80"
     command: mvn clean spring-boot:run
     depends_on:
       - mysql
