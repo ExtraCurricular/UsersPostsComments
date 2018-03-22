@@ -2,7 +2,7 @@ version: '2'
 services:
   app:
     build: ./Service
-    image: tautvis/Service
+    image: tautvis/service
     working_dir: /Service
     volumes:
       - ./Service:/Service
