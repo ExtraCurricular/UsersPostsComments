@@ -124,6 +124,6 @@ public class PostController {
 
         postRepository.delete(post);
 
-        return ResponseEntity.ok().build();
+        return ResponseEntity.noContent().build();
     }
 }

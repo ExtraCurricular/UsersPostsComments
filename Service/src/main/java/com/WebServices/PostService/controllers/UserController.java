@@ -69,8 +69,10 @@ public class UserController {
                 throw new Exception406();
             }
 
-            if ((userRepository.findByEmail(newUser.getEmail())).size() != 0 ||
-                    (userRepository.findByUsername(newUser.getUsername())).size() != 0) {
+            if (userId != user.getId() &&
+                    ((userRepository.findByEmail(newUser.getEmail())).size() != 0 ||
+                            (userRepository.findByUsername(newUser.getUsername())).size() != 0)
+                    ) {
                 throw new Exception409();
             }
 
@@ -96,14 +98,14 @@ public class UserController {
             }
 
             if (newUser.getUsername() != null) {
-                if ((userRepository.findByUsername(newUser.getUsername())).size() != 0) {
+                if (userId != user.getId() && (userRepository.findByUsername(newUser.getUsername())).size() != 0) {
                     throw new Exception409();
                 }
                 user.setUsername(newUser.getUsername());
             }
 
             if (newUser.getEmail() != null) {
-                if ((userRepository.findByEmail(newUser.getEmail())).size() != 0) {
+                if (userId != user.getId() && (userRepository.findByEmail(newUser.getEmail())).size() != 0) {
                     throw new Exception409();
                 }
                 user.setEmail(newUser.getEmail());
@@ -125,6 +127,6 @@ public class UserController {
 
         userRepository.delete(user);
 
-        return ResponseEntity.ok().build();
+        return ResponseEntity.noContent().build();
     }
 }

@@ -132,6 +132,6 @@ public class CommentController {
 
         commentRepository.delete(comment);
 
-        return ResponseEntity.ok().build();
+        return ResponseEntity.noContent().build();
     }
 }
