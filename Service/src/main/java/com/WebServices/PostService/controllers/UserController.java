@@ -33,7 +33,7 @@ public class UserController {
     public User createUser(@Valid @RequestBody User user, HttpServletResponse response) {
         response.setStatus(201);
         User userNew = userRepository.save(user);
-        response.addHeader(String.format("Location", "api/posts/%d"), userNew.getId());
+        response.addHeader("Location", "api/posts/" + userNew.getId());
         return userNew;
     }
 
