@@ -27,7 +27,7 @@ public class PostController {
     }
 
     @GetMapping("/posts/{id}")
-    public  getPostById(@PathVariable(value = "id") Long postId) {
+    public Post getPostById(@PathVariable(value = "id") Long postId) {
         return postRepository.findById(postId).orElseThrow(() -> new Exception404("(GET) api/posts/id", postId));
     }
 
