@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (
-id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+id INcommentsT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 email VARCHAR(30) UNIQUE,
 username VARCHAR(20) UNIQUE
 );
@@ -10,8 +10,7 @@ CREATE TABLE posts (
 id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 userId BIGINT(20),
 title VARCHAR(50),
-body VARCHAR(500),
-FOREIGN KEY (userId) REFERENCES users(id)
+body VARCHAR(500)
 );
 
 DROP TABLE IF EXISTS comments;
@@ -19,9 +18,7 @@ CREATE TABLE comments (
 id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 userId BIGINT(20),
 postId BIGINT(20),
-body VARCHAR(500),
-FOREIGN KEY (userId) REFERENCES users(id),
-FOREIGN KEY (postId) REFERENCES posts(id)
+body VARCHAR(500)
 );
 
 INSERT INTO users (id,username, email) VALUES (1, "John", "john@john.com");
