@@ -1,25 +1,25 @@
-Welcome to users, posts, comments api service!
+Welcome to users, posts, comments api service! </br>
 
-docker-compose up -d
-port: 80
+docker-compose up -d </br>
+port: 80 </br>
 
-Users endpoint:
-api/users (POST) - in body - email(string), username(string)
-api/users (GET) - no params
-api/users/id (GET) - in url - id
-api/users/id (DELETE) - in url - id
-api/users/id (PUT) - in url - id - in body - email(string), username(string)
+Users endpoint: </br>
+api/users (POST) - in body - email(string), username(string) </br>
+api/users (GET) - no params </br>
+api/users/id (GET) - in url - id </br>
+api/users/id (DELETE) - in url - id </br>
+api/users/id (PUT) - in url - id - in body - email(string), username(string) </br>
 
-Posts endpoint:
-api/posts (POST) - in body - userId(int), title(string), body(string)
-api/posts (GET) - no params
-api/posts/id (GET) - in url - id
-api/posts/id (DELETE) - in url - id
-api/posts/id (PUT) - in url - id - in body - userId(int), title(string), body(string)
+Posts endpoint: </br>
+api/posts (POST) - in body - userId(int), title(string), body(string) </br>
+api/posts (GET) - no params </br>
+api/posts/id (GET) - in url - id </br>
+api/posts/id (DELETE) - in url - id </br>
+api/posts/id (PUT) - in url - id - in body - userId(int), title(string), body(string) </br>
 
-Comments endpoint:
-api/comments (POST) - in body - userId(int), postId(int), body(string)
-api/comments (GET) - no params
-api/comments/id (GET) - in url - id
-api/comments/id (DELETE) - in url - id
-api/comments/id (PUT) - in url - id - in body - userId(int), postId(int), body(string)
+Comments endpoint: </br>
+api/comments (POST) - in body - userId(int), postId(int), body(string) </br>
+api/comments (GET) - no params </br>
+api/comments/id (GET) - in url - id </br>
+api/comments/id (DELETE) - in url - id </br>
+api/comments/id (PUT) - in url - id - in body - userId(int), postId(int), body(string) </br>
