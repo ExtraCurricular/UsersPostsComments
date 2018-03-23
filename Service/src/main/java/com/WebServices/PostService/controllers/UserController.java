@@ -50,7 +50,7 @@ public class UserController {
 
             response.setStatus(201);
             User userNew = userRepository.save(user);
-            response.addHeader("Location", "api/posts/" + userNew.getId());
+            response.addHeader("Location", "api/users/" + userNew.getId());
             return userNew;
         } catch (Exception400 ex) {
             throw new Exception400("(POST) api/users", "user exits with this id: " + user.getId());
