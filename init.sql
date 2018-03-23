@@ -8,7 +8,7 @@ username VARCHAR(20) UNIQUE
 DROP TABLE IF EXISTS posts;
 CREATE TABLE posts (
 id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-userId INT,
+userId BIGINT(20),
 title VARCHAR(50),
 body VARCHAR(500),
 FOREIGN KEY (userId) REFERENCES users(id)
@@ -17,8 +17,8 @@ FOREIGN KEY (userId) REFERENCES users(id)
 DROP TABLE IF EXISTS comments;
 CREATE TABLE comments (
 id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-userId INT,
-postId INT,
+userId BIGINT(20),
+postId BIGINT(20),
 body VARCHAR(500),
 FOREIGN KEY (userId) REFERENCES users(id),
 FOREIGN KEY (postId) REFERENCES posts(id)
@@ -28,7 +28,6 @@ INSERT INTO users (id,username, email) VALUES (1, "John", "john@john.com");
 INSERT INTO users (id,username, email) VALUES (2, "John1", "john1@john.com");
 INSERT INTO users (id,username, email) VALUES (3, "John2", "john2@john.com");
 INSERT INTO users (id,username, email) VALUES (4, "John3", "john3@john.com");
-
 
 INSERT INTO posts (id, userId, title, body) VALUES (1, 1, "first title", "first post");
 INSERT INTO posts (id, userId, title, body) VALUES (2, 2, "second title", "second post");
