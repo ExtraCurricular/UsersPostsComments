@@ -19,7 +19,7 @@ public class Post {
     private long id;
     private String title;
     private String body;
-    private int userId;
+    private long userId;
 
     public long getId() {
         return id;
@@ -45,11 +45,11 @@ public class Post {
         this.body = body;
     }
 
-    public int getUserId() {
+    public long getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(long userId) {
         this.userId = userId;
     }
 }
