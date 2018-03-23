@@ -15,11 +15,8 @@ public class Comment {
     @GeneratedValue(generator = "increment")
     @Column(name = "id")
     private long id;
-    @Column(name = "body")
     private String body;
-    @Column(name = "userId")
     private long userId;
-    @Column(name = "postId")
     private long postId;
 
     public long getId() {

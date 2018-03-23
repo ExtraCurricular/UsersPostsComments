@@ -15,9 +15,7 @@ public class User {
     @GeneratedValue(generator = "increment")
     @Column(name = "id")
     private long id;
-    @Column(name = "username")
     private String username;
-    @Column(name = "email")
     private String email;
 
     public long getId() {

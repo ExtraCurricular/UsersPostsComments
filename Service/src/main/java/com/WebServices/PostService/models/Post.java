@@ -17,11 +17,8 @@ public class Post {
     @GenericGenerator(name = "increment", strategy = "increment")
     @Column(name = "id")
     private long id;
-    @Column(name = "title")
     private String title;
-    @Column(name = "body")
     private String body;
-    @Column(name = "userId")
     private int userId;
 
     public long getId() {
