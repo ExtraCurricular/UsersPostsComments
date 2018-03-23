@@ -31,9 +31,10 @@ public class UserController {
 
     @PostMapping("/users")
     public User createUser(@Valid @RequestBody User user, HttpServletResponse response) {
-        response.addHeader("Location", "api/users");
         response.setStatus(201);
-        return userRepository.save(user);
+        User userNew = userRepository.save(user);
+        response.addHeader(String.format("Location", "api/posts/%d"), userNew.getId());
+        return userNew;
     }
 
     @PutMapping("/users/{id}")
