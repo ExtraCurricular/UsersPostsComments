@@ -9,8 +9,8 @@ DROP TABLE IF EXISTS comments;
 
 CREATE TABLE users (
 id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-email VARCHAR(30) UNIQUE,
-username VARCHAR(20) UNIQUE
+email VARCHAR(100) UNIQUE,
+username VARCHAR(100) UNIQUE
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 INSERT INTO users (id,username, email) VALUES (1, "John", "john@john.com");
@@ -21,7 +21,7 @@ INSERT INTO users (id,username, email) VALUES (4, "John3", "john3@john.com");
 CREATE TABLE posts (
 id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 user_id BIGINT(20),
-title VARCHAR(50),
+title VARCHAR(100),
 body VARCHAR(500)
 )  ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
